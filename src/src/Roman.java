@@ -13,20 +13,28 @@ public class Roman {
         } else if (roman == 'X') {
             return 10;
         }
-//        else if (roman == 'L') {
-//            return 50;
-//        } else if (roman == 'C') {
-//            return 100;
-//        } else if (roman == 'D') {
-//            return 500;
-//        } else if (roman == 'M') {
-//            return 1000;
-//        }
+        else if (roman == 'L') {
+            return 50;
+        } else if (roman == 'C') {
+            return 100;
+        } else if (roman == 'D') {
+            return 500;
+        } else if (roman == 'M') {
+            return 1000;
+        }
         return 0;
     }
     TreeMap<Integer, String> arabianKeyMap = new TreeMap<>();
 
     public Roman() {
+        arabianKeyMap.put(1000, "M");
+        arabianKeyMap.put(900, "CM");
+        arabianKeyMap.put(500, "D");
+        arabianKeyMap.put(400, "CD");
+        arabianKeyMap.put(100, "C");
+        arabianKeyMap.put(90, "XC");
+        arabianKeyMap.put(50, "L");
+        arabianKeyMap.put(40, "XL");
         arabianKeyMap.put(10, "X");
         arabianKeyMap.put(9, "IX");
         arabianKeyMap.put(5, "V");
@@ -69,6 +77,14 @@ public class Roman {
         } else if (string.contains("V")) {
             return true;
         } else if (string.contains("X")) {
+            return true;
+        } else if (string.contains("XL")) {
+            return true;
+        } else if (string.contains("L")) {
+            return true;
+        } else if (string.contains("XC")) {
+            return true;
+        } else if (string.contains("C")) {
             return true;
         } else {
             return false;
